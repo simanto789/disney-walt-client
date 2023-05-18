@@ -10,7 +10,7 @@ const NavBar = () => {
         <li><Link to="/">My Toys</Link></li>
         <li><Link to="/">Add Toys</Link></li>
         <li><Link to="/">Blogs</Link></li>
-        
+
     </>
     return (
         <div className="navbar bg-base-100">
@@ -23,7 +23,7 @@ const NavBar = () => {
                         {navItems}
                     </ul>
                 </div>
-                <Link to="/" className="btn btn-ghost normal-case ml-7 text-xl w-32 "><img src={logo} alt="" /></Link>
+                <Link to="/" className="btn btn-ghost normal-case text-xl w-32 "><img src={logo} alt="" /></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -31,7 +31,7 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-            <button className="btn btn-outline">Log In</button>
+                <button className="btn btn-outline">Log In</button>
             </div>
         </div>
     );
