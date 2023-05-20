@@ -4,6 +4,7 @@ import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
 import SubCategoryDetails from "../Pages/Category/SubCategoryDetails";
+import AddToy from "../Pages/AddToy/AddToy";
 
 const router = createBrowserRouter([
     {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
             path: 'details/:id',
             element: <SubCategoryDetails></SubCategoryDetails>,
             loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`)
+        },
+        {
+          path: 'addToy',
+          element: <AddToy></AddToy>
         },
         {
           path: 'login',
