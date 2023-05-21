@@ -7,7 +7,7 @@ const AddToy = () => {
     const handleAddToy = event => {
         event.preventDefault();
         const form = event.target;
-        const selleremail = form.selleremail.value;
+        const email = user?.email;
         const sellername = form.sellername.value;
         const toyname = form.toyname.value;
         const toypicture = form.toypicture.value;
@@ -18,7 +18,7 @@ const AddToy = () => {
         const details = form.details.value;
 
         const toy = {
-            selleremail,
+            email,
             sellername,
             toyname,
             toypicture,
@@ -56,7 +56,7 @@ const AddToy = () => {
                         <label className="label">
                             <span className="label-text">Your Email</span>
                         </label>
-                        <input type="text" defaultValue={user?.email} name="selleremail" placeholder="Email" className="input input-bordered" />
+                        <input type="text" defaultValue={user?.email} name="email" placeholder="Email" className="input input-bordered" />
                     </div>
                     <div className="form-control w-1/2 ml-5">
                         <label className="label">

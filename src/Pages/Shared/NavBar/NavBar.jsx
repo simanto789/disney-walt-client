@@ -17,12 +17,16 @@ const NavBar = () => {
 
     const navItems = <>
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/">All Toys</Link></li>
-        <li><Link to="/">My Toys</Link></li>
+        <li><Link to="/">All Toys</Link></li>     
+        {user?.email ? 
+        <>
+        <li><Link to="/mytoys">My Toys</Link></li>
         <li><Link to="/addtoy">Add Toys</Link></li>
+        <li> <button onClick={handleLogOut}>LogOut</button> </li>
+        </> 
+        : <li><Link to="login">Login</Link></li>
+        }
         <li><Link to="/">Blogs</Link></li>
-        {/* {user?.email ? <li> <button onClick={handleLogOut}>LogOut</button> </li> : <li><Link to="login">Login</Link></li>
-        } */}
 
     </>
     return (
@@ -44,9 +48,7 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                {/* <Link to="/login"><button className="btn btn-outline">Log In</button></Link> */}
-                {user?.email ?  <button className="btn btn-outline" onClick={handleLogOut}>Log Out</button>  : <button className="btn btn-outline" ><Link to="login">Log In</Link> </button> 
-                }
+                <Link to="/about"><button className="btn btn-outline">About Us</button></Link>
 
             </div>
         </div>
