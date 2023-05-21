@@ -7,40 +7,54 @@ import SubCategoryDetails from "../Pages/Category/SubCategoryDetails";
 import AddToy from "../Pages/AddToy/AddToy";
 import MyToys from "../Pages/MyToys/MyToys";
 import PrivateRoutes from "./PrivateRoutes";
+import ToyUpdate from "../Pages/MyToys/ToyUpdate";
+import Blog from "../Pages/Blog/Blog";
+
+
 
 const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Main></Main>,
-      children: [
-        {
-            path: '/',
-            element: <Home></Home>
-        },
-        {
-            path: 'details/:id',
-            element: <SubCategoryDetails></SubCategoryDetails>,
-            loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`)
-        },
-        {
-          path: 'addToy',
-          element: <PrivateRoutes><AddToy></AddToy></PrivateRoutes>
-        },
-        {
-          path: 'mytoys',
-          element: <PrivateRoutes><MyToys></MyToys></PrivateRoutes>
-        },
-        {
-          path: 'login',
-          element: <Login></Login>
-        },
-        {
-          path: 'signup',
-          element: <SignUp></SignUp>
-        }
-      ]
-    },
-  ]);
+  {
+    path: "/",
+    element: <Main></Main>,
+    children: [
+      {
+        path: '/',
+        element: <Home></Home>
+      },
+      {
+        path: 'details/:id',
+        element: <SubCategoryDetails></SubCategoryDetails>,
+        loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
+      },
+      {
+        path: '/blog',
+        element: <Blog></Blog>
+      },
+      {
+        path: 'addToy',
+        element: <PrivateRoutes><AddToy></AddToy></PrivateRoutes>
+      },
+      {
+        path: 'mytoys',
+        element: <PrivateRoutes><MyToys></MyToys></PrivateRoutes>
+      },
+      {
+        path: 'updatetoys/:id',
+        element: <ToyUpdate></ToyUpdate>,
+        loader: ({ params }) => fetch(`http://localhost:5000/toys/${params.id}`)
+      },
+
+      {
+        path: 'login',
+        element: <Login></Login>
+      },
+      {
+        path: 'signup',
+        element: <SignUp></SignUp>
+      }
+    ]
+  },
+]);
 
 
-  export default router;
+export default router;

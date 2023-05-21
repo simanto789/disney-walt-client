@@ -1,13 +1,11 @@
+import { Link } from "react-router-dom";
 
-const ToysRow = ({ toys }) => {
-    const { toypicture, toyname, sellername, email, category, price, rating, quantity, details } = toys;
+const ToysRow = ({ toys, handleDelete }) => {
+    const { _id, toypicture, toyname, sellername, email, category, price, rating, quantity, details } = toys;
+
+    
     return (
         <tr>
-            <th>
-                <label>
-                    <input type="checkbox" className="checkbox" />
-                </label>
-            </th>
             <td>
                 <div className="avatar">
                     <div className="rounded w-28 h-24">
@@ -27,7 +25,8 @@ const ToysRow = ({ toys }) => {
             <td>{quantity}</td>
             <td>{details}</td>
             <th>
-                <button className="btn btn-ghost btn-xs">details</button>
+                <Link to={`../updatetoys/${_id}`}><button className="btn btn-outline">Update</button></Link>
+                <button onClick={() => handleDelete(_id)} className="btn btn-outline ml-2">Delete</button>
             </th>
         </tr>
     );

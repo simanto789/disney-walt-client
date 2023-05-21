@@ -12,7 +12,27 @@ const MyToys = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setMytoys(data))
-    }, [])
+    }, []);
+
+    const handleDelete = id => {
+        const proceed = confirm('Are You Sure You Want To Delete');
+        if (proceed) {
+            fetch(`http://localhost:5000/toys/${id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount > 0) {
+                        alert('deleted successful')
+                        const remaining = mytoys.filter( toys => toys._id !== id);
+                        setMytoys(remaining);
+                    }
+                })
+        }
+    }
+
+    // updatetoys
 
     return (
         <div>
@@ -23,11 +43,7 @@ const MyToys = () => {
                     {/* head */}
                     <thead>
                         <tr>
-                            <th>
-                                <label>
-                                    <input type="checkbox" className="checkbox" />
-                                </label>
-                            </th>
+
                             <th>Image</th>
                             <th>Toy name</th>
                             <th>Seller Name</th>
@@ -37,6 +53,7 @@ const MyToys = () => {
                             <th>Rating</th>
                             <th>Quantity</th>
                             <th>Details</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -45,6 +62,7 @@ const MyToys = () => {
                                 <ToysRow
                                     key={toys._id}
                                     toys={toys}
+                                    handleDelete={handleDelete}
                                 ></ToysRow>)
                         }
                     </tbody>
