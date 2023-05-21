@@ -6,7 +6,7 @@ const MyToys = () => {
     const {user} = useContext(AuthContext);
     const [mytoys, setMytoys] = useState([]);
 
-    const url = `http://localhost:5000/toys?email=${user.email}`;
+    const url = `http://localhost:5000/toys?email=${user?.email}`;
     useEffect( () => {
         fetch(url)
         .then(res => res.json())
