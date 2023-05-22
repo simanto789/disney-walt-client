@@ -19,7 +19,7 @@ const Gallery = () => {
                 {
                     images.map(image => <Imagecart
                         key={image._id}
-                        image = {image}
+                        image={image}
                     ></Imagecart>)
                 }
 

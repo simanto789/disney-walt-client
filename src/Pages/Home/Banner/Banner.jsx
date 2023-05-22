@@ -7,7 +7,9 @@ import img5 from '../../../assets/images/baner.avif'
 
 const Banner = () => {
     return (
-        <div className="carousel w-full max-w-6xl mx-auto ">
+        <div className="carousel w-full max-w-6xl mx-auto " data-aos="fade-down"
+            data-aos-easing="linear"
+            data-aos-duration="1500" >
             <div id="slide1" className="carousel-item relative w-full ">
                 <img src={img1} className="w-11/12 h-fit " />
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
