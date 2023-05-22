@@ -1,8 +1,10 @@
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import useTitle from "../../hooks/useTitle";
 
 const AddToy = () => {
     const { user } = useContext(AuthContext);
+    useTitle('Add Toy')
 
     const handleAddToy = event => {
         event.preventDefault();
@@ -130,8 +132,8 @@ const AddToy = () => {
                         className="textarea textarea-bordered"
                     ></textarea>
                 </div>
-                <div className="mt-6 text-center">
-                    <button type="submit" className="btn btn-primary">
+                <div className="mt-5 mb-5 text-center">
+                    <button type="submit" className="btn btn-outline btn-primary">
                         Add Toy
                     </button>
                 </div>

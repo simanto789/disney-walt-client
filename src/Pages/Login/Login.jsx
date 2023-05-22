@@ -1,11 +1,18 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
+import useTitle from "../../hooks/useTitle";
 
 
 const Login = () => {
 
     const { signIn } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+    useTitle('Login')
+
+    const from = location.state?.from?.pathname || '/' ;
 
     const handleLogin = event => {
         event.preventDefault();
@@ -17,6 +24,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                navigate(from, { replace: true});
             })
             .catch(error => console.log(error));
     }
@@ -51,6 +59,7 @@ const Login = () => {
                             </div>
                         </form>
                         <p className="my-4 text-center">New To Disney WALT  <Link className="text-red-600 font-bold ml-2" to="/signup">Sign Up</Link></p>
+                        <SocialLogin></SocialLogin>
                     </div>
                 </div>
             </div>

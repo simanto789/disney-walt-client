@@ -1,6 +1,8 @@
+import useTitle from "../../hooks/useTitle";
 
 
 const Blog = () => {
+    useTitle('Blog')
     return (
         <div className="space-y-10 mt-10 mb-10">
             <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
