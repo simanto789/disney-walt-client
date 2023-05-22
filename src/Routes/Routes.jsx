@@ -11,6 +11,7 @@ import ToyUpdate from "../Pages/MyToys/ToyUpdate";
 import Blog from "../Pages/Blog/Blog";
 import AllToys from "../Pages/AllToys/AllToys";
 import ToysDetails from "../Pages/AllToys/ToysDetails";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 
 
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: '/',
