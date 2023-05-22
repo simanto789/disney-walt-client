@@ -13,6 +13,3 @@ Hosted in firebase -> [DisneyWalt]
 * In the Add Toy section user can add toys delete toys
 * In the My Toys section user can see how many toys he has added and also see details
 
-
-
-

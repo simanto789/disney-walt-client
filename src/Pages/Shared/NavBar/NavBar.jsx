@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from '../../../assets/disneylogo.png'
+import logo from '../../../assets/disneylogo1.png'
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 
@@ -40,7 +40,10 @@ const NavBar = () => {
                         {navItems}
                     </ul>
                 </div>
-                <Link to="/" className="btn btn-ghost normal-case text-xl w-32 "><img src={logo} alt="" /></Link>
+                <Link to="/" className="btn btn-ghost normal-case text-xl w-32 ">
+                    <img className="h-7" src={logo} alt="" />
+                    <small>DisneyWalt</small>
+                    </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

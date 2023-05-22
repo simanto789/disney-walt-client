@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 
+
+
 const SocialLogin = () => {
     const { googleSignIn } = useContext(AuthContext);
     const handleGoogleSignIn = () => {
@@ -15,7 +17,7 @@ const SocialLogin = () => {
         <div>
             <div className="divider">OR</div>
             <div className="text-center">
-                <button onClick={handleGoogleSignIn} className="btn btn-outline btn-primary">Google</button>
+                <button onClick={handleGoogleSignIn} className="btn btn-outline btn-primary"> Google</button>
             </div>
         </div>
     );
