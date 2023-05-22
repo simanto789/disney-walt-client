@@ -5,7 +5,7 @@ const SubCategory = ({ product }) => {
     const { _id, img, tittle, price, rating } = product;
     return (
         <div className="card w-96 bg-base-100">
-            <img src={img} alt="Shoes" />
+            <img className="w-11/12 p-5" src={img} alt="Shoes" />
             <div className="card-body">
                 <h2 className="card-title">
                     {tittle}

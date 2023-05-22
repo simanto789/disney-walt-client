@@ -15,7 +15,7 @@ const Gallery = () => {
         <div className="max-w-5xl mx-auto" >
             <h2 className="text-center text-3xl mt-5 mb-5">Newly Arrived Sets</h2>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-2">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-2">
                 {
                     images.map(image => <Imagecart
                         key={image._id}

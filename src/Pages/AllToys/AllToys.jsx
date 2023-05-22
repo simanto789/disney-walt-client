@@ -41,7 +41,7 @@ const AllToys = () => {
           onChange={handleSearchChange}
           className="border border-gray-300 rounded-md px-4 py-2 mr-2"
         />
-        <button type="submit" className="bg-blue-500 text-white rounded-md px-4 py-2">
+        <button type="submit" className="btn btn-outline btn-primary rounded-md p-4 py-2">
           Search
         </button>
       </form>

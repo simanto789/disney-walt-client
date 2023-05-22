@@ -1,18 +1,15 @@
-
-
-const Imagecart = ({image}) => {
-    const {img , tittle} = image;
+const Imagecart = ({ image }) => {
+    const { img, title } = image;
+  
     return (
-        <div className="card w-96 bg-base-100">
-            <img className="p-4" src={img} alt="Shoes" />
-            <div className="card-body">
-                <h2 className="card-title p-2 ">
-                    {tittle}
-                    <div className="badge badge-secondary">NEW</div>
-                </h2>
-            </div>
+      <div className="relative ">
+        <img className="w-full" src={img} alt={title} />
+        <div className="absolute inset-0 flex items-center justify-center opacity-10 hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-50">
+          <h2 className="text-white text-xl font-bold">{title}</h2>
         </div>
+      </div>
     );
-};
+  };
+  
+  export default Imagecart;
 
-export default Imagecart;
