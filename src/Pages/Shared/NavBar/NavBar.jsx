@@ -17,6 +17,7 @@ const NavBar = () => {
 
     const navItems = <>
         <li><Link to="/">Home</Link></li>
+        <li><Link to="/blog">Blogs</Link></li>
         <li><Link to="/alltoys">All Toys</Link></li>     
         {user?.email ? 
         <>
@@ -26,7 +27,7 @@ const NavBar = () => {
         </> 
         : <li><Link to="login">Login</Link></li>
         }
-        <li><Link to="/blog">Blogs</Link></li>
+        
 
     </>
     return (

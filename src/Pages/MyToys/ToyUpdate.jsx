@@ -32,7 +32,7 @@ const ToyUpdate = () => {
 
         console.log(toy);
 
-        fetch('http://localhost:5000/toys', {
+        fetch('https://disney-walt-server.vercel.app/toys', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

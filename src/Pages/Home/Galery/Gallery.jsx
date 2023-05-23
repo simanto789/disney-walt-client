@@ -6,7 +6,7 @@ const Gallery = () => {
     const [images, setImages] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://disney-walt-server.vercel.app/products')
             .then(res => res.json())
             .then(data => setImages(data));
     }, [])

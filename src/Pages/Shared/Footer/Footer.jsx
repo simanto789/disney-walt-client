@@ -43,7 +43,7 @@ const Footer = () => {
                 </div>
 
             </div>
-            <small >© DisneyWalt All Right Reserved.</small>
+            
         </footer>
     );
 };

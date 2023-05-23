@@ -7,7 +7,7 @@ const AllToys = () => {
   const [searchTerm, setSearchTerm] = useState("");
   useTitle('All Toys')
 
-  const url = "http://localhost:5000/alltoys";
+  const url = "https://disney-walt-server.vercel.app/alltoys";
   
   useEffect(() => {
     fetch(url)

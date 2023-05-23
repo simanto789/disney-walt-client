@@ -28,7 +28,7 @@ const router = createBrowserRouter([
       {
         path: 'details/:id',
         element: <PrivateRoutes><SubCategoryDetails></SubCategoryDetails></PrivateRoutes>,
-        loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
+        loader: ({ params }) => fetch(`https://disney-walt-server.vercel.app/products/${params.id}`)
       },
       {
         path: '/blog',
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
       {
         path: 'toysdetails/:id',
         element: <PrivateRoutes><ToysDetails></ToysDetails></PrivateRoutes>,
-        loader: ({ params }) => fetch(`http://localhost:5000/alltoys/${params.id}`)
+        loader: ({ params }) => fetch(`https://disney-walt-server.vercel.app/alltoys/${params.id}`)
       },
       {
         path: 'addToy',
@@ -54,7 +54,7 @@ const router = createBrowserRouter([
       {
         path: 'updatetoys/:id',
         element: <ToyUpdate></ToyUpdate>,
-        loader: ({ params }) => fetch(`http://localhost:5000/toys/${params.id}`)
+        loader: ({ params }) => fetch(`https://disney-walt-server.vercel.app/toys/${params.id}`)
       },
 
       {

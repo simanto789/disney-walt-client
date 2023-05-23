@@ -6,7 +6,7 @@ const Category = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://disney-walt-server.vercel.app/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
